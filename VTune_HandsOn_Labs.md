@@ -4,21 +4,25 @@
 In host, follow the steps to setup ip address in windows’s Control Panel\All Control Panel Items\Network Connections
 ![image of the output](https://github.com/Joel-lin/IntelSoftwareWorkshop/blob/master/images/setuphostip.png)
 In Linux target, use the following commands to configure Ethernet IP of target machine.
+
 	ifconfig {Ethernet interface name} 192.168.9.22 netmask 255.255.255.0
 	ping 192.168.9.11
+	
 You should receive the ping response if you successfully setup the network connection between host and target.
 
 ## 2. Setup the password-less SSH connection to access the target
 Download required applications on windows host’s folder (for e.g. c:\puttyutilities)
 
-https://the.earth.li/~sgtatham/putty/latest/w64/pscp.exe
-https://the.earth.li/~sgtatham/putty/latest/w64/plink.exe
-https://the.earth.li/~sgtatham/putty/latest/w64/pageant.exe
-https://the.earth.li/~sgtatham/putty/latest/w64/puttygen.exe
+* https://the.earth.li/~sgtatham/putty/latest/w64/pscp.exe
+* https://the.earth.li/~sgtatham/putty/latest/w64/plink.exe
+* https://the.earth.li/~sgtatham/putty/latest/w64/pageant.exe
+* https://the.earth.li/~sgtatham/putty/latest/w64/puttygen.exe
 
 Make sure you include c:\puttyutilities in %PATH% environment variable.
 ![image of the output]( https://github.com/Joel-lin/IntelSoftwareWorkshop/blob/master/images/setuppath.png)
+
 Generate RSA key pairs on Linux target device by the following commands with root id.
+
 	ssh-keygen –t rsa
 	cat .ssh/id_rsa.pub >> .ssh/authorized_keys
 
@@ -29,11 +33,20 @@ Attach the key to ssh agent by using pageant.exe
 ![image of the output](https://github.com/Joel-lin/IntelSoftwareWorkshop/blob/master/images/addkeypageant.png)
 
 Use the following command to test if password-less ssh works or not
+
     plink root@192.168.9.22 ls
 
 ## 3. Build the kernel drivers on target machine.
-1)	Install the entire VTune on your target - install_GUI.sh and build the drivers during the installation(prework)
-2)	Install the linux target package on your linux target. Untar the downloaded target package
+1)	Install the entire Intel(r) VTune Amplifier on the target - install.sh and build the drivers during the installation(prework)
+2)	Install the target package on the linux target. Untar the downloaded target package
+![image of the output](https://github.com/Joel-lin/IntelSoftwareWorkshop/blob/master/images/downloadtargetpackage.png)
+
+Use the following commands to build the kernel drivers and install the kernel modules
+
+	cd /opt/intel/vtune_amplifier/sepdk/src/
+	./build-driver
+	./insmod-sep
+	
 
 ## 4. Setup the Intel® VTune Amplifier 2019 software package for windows host
 Download the Intel® VTune Amplifier 2019 software package via https://registrationcenter.intel.com/en/products/
