@@ -89,8 +89,9 @@ Run demo_security_barrier_camera
 
     ./demo_security_barrier_camera.sh
     
-Follow this for installing dependencies for GPU - https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#additional-GPU-steps
-Follow this for installing dependencies for HDDL VPU https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux_ivad_vpu.html
+Follow the link to install dependencies for GPU - https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux.html#additional-GPU-steps
+
+Follow the link to install dependencies for HDDL VPU - https://docs.openvinotoolkit.org/latest/_docs_install_guides_installing_openvino_linux_ivad_vpu.html
 
 Build the openVINO samples
 
@@ -116,5 +117,5 @@ Open the plain-text reports perf1.csv
 Open VTune UI and click the import button
 ![image of the output](https://github.com/Joel-lin/IntelSoftwareWorkshop/blob/master/images/vtuneimport.png)
 
-Here is the main UI of energy analysis (VTune + SoC Watch)
+Here is the Energy Profiler usage (VTune + SoC Watch)
 ![image of the output](https://github.com/Joel-lin/IntelSoftwareWorkshop/blob/master/images/vtuneEnergyAnalysis.png)  
