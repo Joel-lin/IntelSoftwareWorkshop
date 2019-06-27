@@ -116,6 +116,14 @@ Use the following commands to test security_barrier_camera sample for CPU, GPU, 
 	/root/inference_engine_samples_build/intel64/Release/security_barrier_camera_demo -no-show -i /home/ieisw/Downloads/sampleVideos/car-detection.mp4 -m /root/inference_engine_samples_build/intel64/Release/dldt/vehicle-license-plate-detection-barrier-0106.xml -m_va /root/inference_engine_samples_build/intel64/Release/dldt/vehicle-attributes-recognition-barrier-0039.xml -m_lpr /root/inference_engine_samples_build/intel64/Release/dldt/license-plate-recognition-barrier-0001.xml -d CPU -d_va CPU -d_lpr CPU    
     
 ## 8. VTune, SoC Watch and Energy Profiler usages
+Intel® SoC Watch is a command line tool for monitoring system power consumption on Intel platforms. The tool monitors active and low power states residencies for the following:
+
+* CPU
+* GPU
+* Devices
+* Processor frequencies and throttling reasons
+* Thermals
+
 Download SoC Watch for Windows package via https://registrationcenter.intel.com/en/products/
 ![image of the output](https://github.com/Joel-lin/IntelSoftwareWorkshop/blob/master/images/downloadsocwatch.png)
 * collect the system performance metrics logs
